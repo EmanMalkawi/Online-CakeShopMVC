@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Cake.Models.Bill>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Invoice</title>
+</head>
+<body>
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Productname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orderdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cust)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Productname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orderdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Cust.Custid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order.Orderid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Productid)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Billid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Billid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Billid">Delete</a>
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

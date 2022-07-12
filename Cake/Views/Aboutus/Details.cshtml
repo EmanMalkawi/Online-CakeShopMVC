@@ -1,0 +1,57 @@
+﻿@model Cake.Models.Aboutu
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="a">
+
+    <h1>Details</h1>
+
+    <div>
+        <h4>Aboutu</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Mobilenumber)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Mobilenumber)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Facebook)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Facebook)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Instagram)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Instagram)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Twitter)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Twitter)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Location)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Shop)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Shop.Cakeshopid)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Aboutusid">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

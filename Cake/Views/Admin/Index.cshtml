@@ -1,0 +1,119 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model IEnumerable<Cake.Models.Order>
+
+
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{
+    var countOfProduct = ViewBag.countOfProduct;
+    var countOfCategory = ViewBag.countOfCategory;
+    var countOfCustomer = ViewBag.countOfCustomer;
+    var countOfEmployee = ViewBag.countOfEmployee;
+
+}
+
+
+<div class="pcoded-main-container" style="padding:100px; padding-left:200px;">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+              
+                <div class="main-body">
+                    <div class="page-wrapper">
+
+                        <div class="row">
+
+
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-4 col-xl-3">
+                                        <div class="card bg-c-green order-card">
+                                            <div class="card-block">
+                                                <h5 class="m-b-20">Count Of Category</h5>
+                                                <h2 class="text-right"><img src="https://img.icons8.com/material-sharp/24/000000/product.png" class="fa fa-refresh f-left" /><span>@countOfCategory</span></h2>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-4 col-xl-3">
+                                        <div class="card bg-c-blue order-card">
+                                            <div class="card-block">
+                                                <h5 class="m-b-20">Count Of Products</h5>
+                                                <h2 class="text-right"><img src="https://img.icons8.com/ios/50/000000/confectionery.png" class="fa fa-cart-plus f-left"><span>@countOfProduct</span></h2>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="col-md-4 col-xl-3">
+                                        <div class="card bg-c-green order-card">
+                                            <div class="card-block">
+                                                <h6 class="m-b-20">Count Of Customers</h6>
+                                                <h2 class="text-right"><img src="https://img.icons8.com/ios-filled/50/000000/user.png" class="fa fa-refresh f-left" /><span>@countOfCustomer</span></h2>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-4 col-xl-3">
+                                        <div class="card bg-c-green order-card">
+                                            <div class="card-block">
+                                                <h6 class="m-b-20">Count Of Employees</h6>
+                                                <h2 class="text-right"><img src="https://img.icons8.com/ios-filled/50/000000/user.png" class="fa fa-refresh f-left" /><span>@countOfEmployee</span></h2>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row py-3 my-5 mx-2" style="border:1px solid white; background-color:white">
+    <form asp-action="SearchDate" class="px-5">
+        <div class="row">
+
+            <div class="col">
+                <input type="date" class="form-control" placeholder="From Date" name="fromDate" id="fromDate">
+            </div>
+            <div class="col">
+                <input class="form-control" placeholder="To Date" type="date" name="toDate" id="toDate">
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-danger">search</button>
+            </div>
+        </div>
+    </form>
+
+
+
+</div>
+
+
+
+

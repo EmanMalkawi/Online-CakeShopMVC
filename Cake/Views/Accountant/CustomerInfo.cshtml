@@ -1,0 +1,57 @@
+﻿
+@model IEnumerable<Cake.Models.Customer>
+
+@{
+    ViewData["Title"] = "Customer Informations";
+    Layout = "_AccountantLayout";
+}
+
+<div class="a" style="padding-left:300px;">
+    <h1>Customer Informations</h1>
+
+    <form asp-action="CustomerInfo">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Custfname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Custlname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Custemail)
+                    </th>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.Custrole)
+                        </th>*@
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Custfname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Custlname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Custemail)
+                        </td>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.Custrole.Roleid)
+                            </td>*@
+                        @*<td>
+                                <a asp-action="Edit" asp-route-id="@item.Custid">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.Custid">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.Custid">Delete</a>
+                            </td>*@
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+</div>

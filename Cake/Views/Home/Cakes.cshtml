@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Cake.Models.Product>
+
+@{
+    Layout = null;
+}
+
+
+<body>
+    <section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15">
+        <h2 class="tit6 t-center">
+            Cakes
+        </h2>
+    </section>
+
+
+
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row mb_30">
+                @foreach (var item in Model)
+                {
+                    <form asp-action="Cake">
+                        <input type="hidden" name="proid" id="proid" value="@item.Productid" />
+                        <div class="col-lg mb-5 col-12">
+
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="@Url.Content("/Image/"+ @item.Imagepath)" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">@item.Productname</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Description: @item.Productdescription</li>
+                                        <li class="list-group-item">Price: @item.Price</li>
+
+                                    </ul>
+
+                                    <a href="/Home/Order/@item.Productid" class="btn btn-primary">Order Now</a>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <!--<div class="card h-100  product_overlay">-->
+                            <!-- Product image-->
+                            <!--<img class="card-img-top" src="@Url.Content("/Image/"+ @item.Imagepath)" alt="..." />-->
+                            <!-- Product details-->
+                            <!--<div class="card-body p-4">
+                            <div class="text-center">-->
+                            <!-- Product name-->
+                            <!--<h5 class="fw-bolder">@item.Productname</h5>-->
+                            <!-- Product reviews-->
+                            <!--<div class="d-flex justify-content-center small text-warning mb-2">
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                            </div>-->
+                            <!-- Product price-->
+                            <!--<span class="text-muted text-decoration-line-through">@item.Price JD</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><button class="btn btn-outline-dark mt-auto" type="submit">Add to cart</button></div>
+                                </div>
+                            </div>-->
+
+                        </div>
+                    </form>
+                }
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+</body>

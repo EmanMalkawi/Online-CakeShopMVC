@@ -1,0 +1,45 @@
+﻿@model Cake.Models.Customer
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="a">
+
+    <h1>Details</h1>
+
+    <div>
+        <h4>Customer</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Custfname)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Custfname)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Custlname)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Custlname)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Custemail)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Custemail)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Custrole)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Custrole.Roleid)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Custid">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

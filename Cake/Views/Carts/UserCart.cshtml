@@ -1,0 +1,122 @@
+﻿@model IEnumerable<Cake.Models.Cart>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserCart</title>
+</head>
+
+</html>
+
+
+<body>
+    <h2 style="text-align:center; padding:20px"> My Cart</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Item)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th> <h3> order date</h3></th>
+                <th colspan="2"> <h3> Action </h3></th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Cust)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Order)
+                    </th>*@
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <form asp-action="Orders" asp-controller="Home">
+
+                    <input type="hidden" name="proName" id="proName" value="@item.Item" />
+                    <input type="hidden" name="price" id="price" value="@item.Price" />
+                    <input type="hidden" name="Qty" id="Qty" value="@item.Quantity" />
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Item)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Cust.Custid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Order.Orderid)
+                        </td>*@
+
+                    <td>
+                        @*////*@
+                        <div class="wrap-input100 validate-input">
+                            <label for="orderDate" class="control-label"></label>
+                            <input id="orderDate" class="input100" type="date" name="orderDate" />
+                            <span class="focus-input100"></span>
+                            <span for="orderDate" class="symbol-input100"></span>
+                        </div>
+                    </td>
+
+                    <td>
+                        @*<a asp-action="Edit" asp-route-id="@item.Cartid">Edit</a> |*@
+                        @*<a asp-action="Details" asp-route-id="@item.Cartid">Details</a> |*@
+
+                       <button class="btn btn-danger" type="submit"> <a asp-action="DeleteCart" asp-route-id="@item.Cartid" style="text-decoration:none">Delete</a> </button>
+                    </td>
+
+
+
+
+                    <td>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><button class="btn btn-outline-dark mt-auto" type="submit">Order Now</button></div>
+                        </div>
+                    </td>
+                </tr>
+                </form>
+
+            }
+        </tbody>
+    </table>
+</body>
+<div class="fa-backspace" style="padding:10px">
+        <button class="btn btn-primary" type="submit"> <a style="text-decoration:none" href="/Home/Index">Back</a> </button>
+
+
+        @*<a href="/Home/Shop" role="button" class="btn btn-primary">Continue Shopping</a>*@
+        <button class="btn btn-primary" type="submit"> <a href="/Home/Shop" style="text-decoration:none"> Continue Shopping </a></button>
+</div>
+
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        width: 500px;
+        height: 50px;
+        border-collapse: collapse;
+    }
+    th {
+        background-color: #04AA6D;
+        color: white;
+    }
+    table{ padding-left:10px}
+</style>

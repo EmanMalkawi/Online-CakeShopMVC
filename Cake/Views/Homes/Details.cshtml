@@ -1,0 +1,47 @@
+﻿@model Cake.Models.Home
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="a">
+    <h1>Details</h1>
+
+    <div>
+        <h4>Home</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Imagepath)
+            </dt>
+            <dd class="col-sm-10">
+                @*@Html.DisplayFor(model => model.Imagepath)*@
+                <img src=@Url.Content("~/Image/" + Model.Imagepath) asp-append-version="true" style="width:100px; height:100px; border-radius:10%" alt="Alternate Text" />
+
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Backgroundtext)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Backgroundtext)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Aboutustext)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Aboutustext)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Shop)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Shop.Cakeshopname)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Homeid">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

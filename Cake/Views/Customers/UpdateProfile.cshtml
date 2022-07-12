@@ -1,0 +1,58 @@
+﻿@model Cake.Models.Customer
+
+@{
+    Layout = null;
+    var ID = ViewBag.Id;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateProfile</title>
+</head>
+<body>
+    <div class="row">
+        <h4>Update Profile</h4>
+        <hr />
+        <div class="col-md-4" style="padding:15px">
+            <form asp-action="UpdateProfile">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Custid" />
+                <div class="form-group">
+                    <label asp-for="Custfname" class="control-label">First Name:</label>
+                    <input asp-for="Custfname" class="form-control" />
+                    <span asp-validation-for="Custfname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Custlname" class="control-label">Last Name:</label>
+                    <input asp-for="Custlname" class="form-control" />
+                    <span asp-validation-for="Custlname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Custemail" class="control-label">Email:</label>
+                    <input asp-for="Custemail" class="form-control" />
+                    <span asp-validation-for="Custemail" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                    <label asp-for="Custroleid" class="control-label"></label>
+                    <select asp-for="Custroleid" class="form-control" asp-items="ViewBag.Custroleid"></select>
+                    <span asp-validation-for="Custroleid" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <button class="btn btn-primary" type="submit"> <a href="/Home/Index" style="text-decoration:none"> Back</a> </button>
+            </div>
+                @*<div>
+                    <div>  <button class="btn btn-primary" type="submit"> <a href="/Home/Index" style="text-decoration:none"> Back</a> </button></div>
+                </div>*@
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>    .form-group {
+        padding: 10px
+    } </style>

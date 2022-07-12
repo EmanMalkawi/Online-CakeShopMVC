@@ -1,0 +1,27 @@
+﻿@model Cake.Models.Cakeshop
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="a">
+    <h1>Details</h1>
+
+    <div>
+        <h4>Cakeshop</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cakeshopname)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cakeshopname)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Cakeshopid">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

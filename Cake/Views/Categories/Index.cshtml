@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Cake.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="a">
+
+    <h1>Cake Categories</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categoryname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Imagepath)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoryname)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.Imagepath)*@
+                        <img src=@Url.Content("~/Image/" + item.Imagepath) asp-append-version="true" style="width:100px; height:100px; border-radius:10%" alt="Alternate Text" />
+
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Categoryid">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Categoryid">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Categoryid">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

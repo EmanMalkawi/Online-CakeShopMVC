@@ -1,0 +1,52 @@
+﻿@model Cake.Models.Home
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="a">
+    <h1>Edit</h1>
+
+    <h4>Home</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Homeid" />
+                <div class="form-group">
+                    <label asp-for="ImageFile" class="control-label"></label>
+                    <input asp-for="ImageFile" class="form-control" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Backgroundtext" class="control-label"></label>
+                    <input asp-for="Backgroundtext" class="form-control" />
+                    <span asp-validation-for="Backgroundtext" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Aboutustext" class="control-label"></label>
+                    <input asp-for="Aboutustext" class="form-control" />
+                    <span asp-validation-for="Aboutustext" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Shopid" class="control-label"></label>
+                    <select asp-for="Shopid" class="form-control" asp-items="ViewBag.Shopid"></select>
+                    <span asp-validation-for="Shopid" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

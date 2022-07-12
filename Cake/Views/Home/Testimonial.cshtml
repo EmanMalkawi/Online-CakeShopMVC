@@ -1,0 +1,275 @@
+﻿
+@model Cake.Models.Feedback
+
+@{
+    //Layout = "_LoginLayout";
+
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Testimonial</title>
+</head>
+<body>
+
+    @*<h4>Feedback</h4>
+        <hr />*@
+
+    <div class="container contact">
+        <div class="row">
+
+            @*<div class="col-md-3">
+                    <div class="contact-info">
+                        <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image" />
+                        <h3>Contact Us</h3>
+                        <h4>We would love to hear from you !</h4>
+                    </div>
+                </div>*@
+
+            <div class="col-md-9">
+                <div class="contact-form">
+                    <h2> Testimonial Form</h2>
+                    <form asp-action="Testimonial" method="post" style="padding: 36px; width: 300px;">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+                        <div class="form-group">
+                            <label asp-for="Firstname" class="control-label col-sm-2">First Name:</label>
+                            <div class="col-sm-10">
+                                <input asp-for="Firstname" type="text" class="form-control">
+                                <span asp-validation-for="Firstname" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Lastname" class="control-label col-sm-2">Last Name:</label>
+                            <div class="col-sm-10">
+                                <input asp-for="Lastname" type="text" class="form-control">
+                                <span asp-validation-for="Lastname" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label col-sm-2">Email:</label>
+                            <div class="col-sm-10">
+                                <input asp-for="Email" type="text" class="form-control" >
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label asp-for="Text" class="control-label col-sm-2">Message:</label>
+                            <div class="col-sm-10">
+                                <input asp-for="Text" type="text" class="form-control">
+                                <span asp-validation-for="Text" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <input type="submit" value="SEND" class="btn btn-default" onclick="Done()" />
+                            </div>
+
+                        </div>
+                        <a href="/Home/Index" class="btn btn-default"> Back </a>
+
+                    </form>
+                </div>
+
+                @*<div id="confirm">
+                        <p id="test"></p>
+                    </div>*@
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    @*<div class="container contact">
+            <div class="row">
+                <div class="col-md-4" style="padding: 200px;">
+
+                    <form asp-action="Testimonial" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="Firstname" class="control-label">First Name:</label>
+                            <input asp-for="Firstname" class="form-control" />
+                            <span asp-validation-for="Firstname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Lastname" class="control-label">Last Name:</label>
+                            <input asp-for="Lastname" class="form-control" />
+                            <span asp-validation-for="Lastname" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label">Email:</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Text" class="control-label">Message:</label>
+                            <input asp-for="Text" class="form-control" />
+                            <span asp-validation-for="Text" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="SEND" class="btn btn-primary" />
+                        </div>
+
+                    </form>
+
+
+                </div>
+            </div>
+        </div>*@
+
+ <script src="~/js/site.js"></script>
+</body>
+</html>
+
+
+
+<style>
+
+    .contact {
+        padding: 150px;
+        height: 400px;
+    }
+
+    .col-md-3 {
+        background: #a1359d;
+        padding: 5%;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+    }
+
+    button.btn.btn-default {
+        background-color: purple;
+    }
+
+
+
+    .contact-info {
+        margin-top: 10%;
+    }
+
+        .contact-info img {
+            margin-bottom: 15%;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 10%;
+        }
+
+    .col-md-9 {
+        background: #e1d1d1;
+        padding: 3%;
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+
+    .contact-form label {
+        font-weight: 600;
+        margin: 10px;
+    }
+
+    .contact-form button {
+        background: #25274d;
+        color: #fff;
+        font-weight: 600;
+        width: 25%;
+        margin: 10px;
+    }
+
+    .row {
+        height: 550px;
+    }
+
+    .btn-primary {
+        color: #fff !important;
+        background-color: #a83bb2 !important;
+        border-color: #2c0a26 !important;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Testimonial</title>
+    </head>
+    <body>
+
+    <h4>Feedback</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Testimonial">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Custid" class="control-label"></label>
+                    <select asp-for="Custid" class ="form-control" asp-items="ViewBag.Custid"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Firstname" class="control-label"></label>
+                    <input asp-for="Firstname" class="form-control" />
+                    <span asp-validation-for="Firstname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Lastname" class="control-label"></label>
+                    <input asp-for="Lastname" class="form-control" />
+                    <span asp-validation-for="Lastname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Text" class="control-label"></label>
+                    <input asp-for="Text" class="form-control" />
+                    <span asp-validation-for="Text" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+    </body>
+    </html>*@

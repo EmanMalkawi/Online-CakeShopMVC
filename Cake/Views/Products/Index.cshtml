@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Cake.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="a">
+
+    <h1>Products</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Productname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Productdescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Imagepath)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Productcateg)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Productname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Productdescription)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.Imagepath)*@
+                        <img src=@Url.Content("~/Image/" + item.Imagepath) asp-append-version="true" style="width:100px; height:100px; border-radius:10%" alt="Alternate Text" />
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Productcateg.Categoryname)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Productid">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Productid">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Productid">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

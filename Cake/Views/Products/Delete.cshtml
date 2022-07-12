@@ -1,0 +1,56 @@
+﻿@model Cake.Models.Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="a">
+
+    <h1>Delete</h1>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Productname)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Productname)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Productdescription)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Productdescription)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Imagepath)
+            </dt>
+            <dd class="col-sm-10">
+                @*@Html.DisplayFor(model => model.Imagepath)*@
+                <img src=@Url.Content("~/Image/" + Model.Imagepath) asp-append-version="true" style="width:100px; height:100px; border-radius:10%" alt="Alternate Text" />
+
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Productcateg)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Productcateg.Categoryname)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Productid" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</div>

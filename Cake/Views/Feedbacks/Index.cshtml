@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Cake.Models.Feedback>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="a">
+
+    <h1>Testimonials</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Firstname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lastname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Text)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cust)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Firstname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lastname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cust.Custid)
+                    </td>
+                    <td>
+                        @*<a asp-action="Edit" asp-route-id="@item.Feedbackid">Edit</a> |*@
+                        <a asp-action="Details" asp-route-id="@item.Feedbackid">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Feedbackid">Delete</a> 
+                        @*<a asp-action="" asp-route-id="" onclick="Test()">Accept</a>*@
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+    @*<script>
+        function Test(x) {
+
+        }
+    </script>*@

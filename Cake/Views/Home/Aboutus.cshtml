@@ -1,0 +1,259 @@
+﻿@model Tuple<IEnumerable<Cake.Models.Home>, IEnumerable<Cake.Models.Category>, IEnumerable<Cake.Models.Cakeshop>, IEnumerable<Cake.Models.Home>
+          , IEnumerable<Cake.Models.Aboutu>, IEnumerable<Cake.Models.Feedback>>
+
+@{
+    Layout = "_LoginLayout";
+
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Aboutus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+
+  
+</head>
+<body>
+    <div class="a">
+        
+        <h2>About Us</h2>
+
+        <p> </p>
+
+        @*<div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Featured
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+            </ul>
+        </div>*@
+
+
+    <div class="row mb_30"  sstyle="padding:50px">
+
+
+        @foreach (var item in Model.Item5)
+        {
+            <div style=" padding: 20px;">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Mobile Number
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">@item.Mobilenumber</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style=" padding: 20px">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Facebook
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">@item.Facebook</li>
+                    </ul>
+                </div>
+            </div>
+            <div style=" padding: 20px">
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Instagram
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">@item.Instagram</li>
+                    </ul>
+                </div>
+            </div>
+            <div style=" padding: 20px">
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Twitter
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">@item.Twitter</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style=" padding: 20px">
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Location
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">@item.Location</li>
+                    </ul>
+                </div>
+            </div>
+
+                @*<div class="card" style="width: 18rem">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">
+                            @Html.DisplayFor(modelItem => item.Mobilenumber)
+                        </p>
+                    </div>
+                </div>*@
+
+                <!--<div class="card" style="width: 18rem">
+            <div class="card-body">
+                <h5 class="card-title">
+                    FaceBook-->
+                @*@Html.DisplayNameFor(model => model.Facebook)*@
+                <!--</h5>
+                    <p class="card-text">
+                        @Html.DisplayFor(modelItem => item.Facebook)
+                    </p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title">Instagram</h5>
+                    <p class="card-text">
+                        @Html.DisplayFor(modelItem => item.Instagram)
+                    </p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Twitter
+                    </h5>
+                    <p class="card-text">
+                        @Html.DisplayFor(modelItem => item.Twitter)
+                    </p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title">Location</h5>
+                    <p class="card-text">
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </p>
+                </div>
+            </div>-->
+                }
+
+            </div>
+
+
+        </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Aboutus</title>
+    </head>
+    <body>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mobilenumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Facebook)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Instagram)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Twitter)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Location)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Shop)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mobilenumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Facebook)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Instagram)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Twitter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Shop.Cakeshopid)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Aboutusid">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Aboutusid">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Aboutusid">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+    </body>
+    </html>*@

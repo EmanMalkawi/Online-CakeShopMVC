@@ -1,0 +1,129 @@
+﻿@model IEnumerable<Cake.Models.Product>
+
+@{
+    Layout = null;
+    //Layout = "_LoginLayout";
+
+}
+
+<div style=" background-color: #fbe8eb; ">
+    <h2>
+        Cake Shop Menu
+    </h2>
+
+    <div>  <button class="btn btn-primary" type="submit"> <a href="/Home/Index" style="text-decoration:none"> Back</a> </button></div>
+
+
+
+    @foreach (var item in Model)
+    {
+        <form asp-action="Shop" style="display:inline">
+            @*<input type="hidden" name="proid" id="proid" value="@item.Productid" />*@
+            <input type="hidden" name="proName" id="proName" value="@item.Productname" />
+            <input type="hidden" name="price" id="price" value="@item.Price" />
+
+            <div class="col-lg mb-5 col-12" style="display:inline">
+
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="@Url.Content("/Image/"+ @item.Imagepath)" alt="..." />
+                    <div class="card-body p-4">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Productname</h5>
+
+
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Description: @item.Productdescription</li>
+                                <li class="list-group-item">Price: @item.Price</li>
+
+                            </ul>
+
+                            <div class="list-group list-group-flush">
+                                <label for="Qty" class="list-group-item">Quantity:</label>
+                                <input id="Qty" class="list-group-item" type="number" min="1" name="Qty" />
+                                <span class="focus-input100"></span>
+                                <span for="Qty" class="symbol-input100"></span>
+                            </div>
+
+
+                            @*<span class="text-muted text-decoration-line-through">@item.Price JD</span>*@
+
+                        </div>
+                    </div>
+
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center" style="text-align:center"><button class="btn btn-primary" type="submit">Add to cart</button></div>
+                    </div>
+                </div>
+                @*class="btn btn-outline-dark mt-auto"*@
+            </div>
+
+        </form>
+    }
+</div>
+
+
+
+
+
+
+<style>
+    .card {
+        display: inline-block;
+        margin-left: 57px;
+        margin: 30px;
+    }
+
+    h5.card-title {
+        text-align: center;
+        font-size: 20px;
+        /*        font-family: cursive;
+    */ color: #770777 !important;
+    }
+
+    p.card-text {
+        font-size: 18px;
+        font-family: initial;
+        color: #362323 !important;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 48px;
+        font-family: 'Caveat', cursive;
+        font-weight: 900;
+        color: #770777;
+        padding: 20px;
+    }
+
+    btn-primary {
+        color: white !important;
+        background-color: #1fab2a !important;
+        border-color: #0f1d0e !important;
+    }
+</style>
+
+
+
+
+
+
+
+
+<!-- Section-->
+@*<section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row mb_30">
+
+
+
+
+
+            </div>
+        </div>
+    </section>*@
+
+
+
+
+

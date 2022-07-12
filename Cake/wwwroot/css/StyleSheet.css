@@ -1,0 +1,12 @@
+﻿body {
+    background-color:antiquewhite;
+}
+
+h2 {
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Caveat', cursive;
+    font-weight: 900;
+    color: #770777;
+    padding: 100px;
+}
